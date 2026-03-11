@@ -1,0 +1,136 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Login View-->
+    <!--Login Font-->
+    <Style x:Key="LoginFont" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    <!--Login Button-->
+    <Style x:Key="LoginButton" TargetType="Button">
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Background" Value="#00CCFF"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="20" 
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"
+                                          />
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black"
+                                              BlurRadius="10"
+                                              ShadowDepth="3"
+                                              Opacity="0.2"/>
+                        </Border.Effect>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#66CCCC"/>
+                <Setter Property="Foreground" Value="Black"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--Login Textbox-->
+    <Style x:Key="LoginTextBox" TargetType="TextBox">
+
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+
+                    <Border x:Name="border"
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="#D0D5DD"
+                        BorderThickness="1">
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="8"
+                                          ShadowDepth="2"
+                                          Opacity="0.2"/>
+                        </Border.Effect>
+
+                        <ScrollViewer x:Name="PART_ContentHost"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="border"
+                                Property="BorderBrush"
+                                Value="#4A90E2"/>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border"
+                                Property="BorderBrush"
+                                Value="#7DAFFF"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LoginPasswordBox" TargetType="PasswordBox">
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="PasswordBox">
+
+                    <Border x:Name="border"
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="#D0D5DD"
+                        BorderThickness="1">
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="8"
+                                          ShadowDepth="2"
+                                          Opacity="0.2"/>
+                        </Border.Effect>
+
+                        <ScrollViewer x:Name="PART_ContentHost"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="border"
+                                Property="BorderBrush"
+                                Value="#4A90E2"/>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border"
+                                Property="BorderBrush"
+                                Value="#7DAFFF"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

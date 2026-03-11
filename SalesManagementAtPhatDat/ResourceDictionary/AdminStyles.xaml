@@ -1,0 +1,69 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Button Side Bar-->
+    <Style x:Key="ButtonSideBar" TargetType="Button">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border"
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter
+                        Content="{TemplateBinding Content}"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Margin="{TemplateBinding Padding}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFDAB9"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--Search Textbox Style-->
+    <Style x:Key="SearchStyle" TargetType="TextBox">
+        <Setter Property="Width" Value="350"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="30,0,0,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                <Border x:Name="Border"
+                        CornerRadius="20"
+                        BorderThickness="1"
+                        BorderBrush="Black"
+                        >
+                        <ContentPresenter Content="&#xE721;"
+                                      VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                      HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                      
+                                      Margin="20,0,0,0"/>
+                </Border>
+             </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--Right Text (Admin - Name) Styles-->
+    <Style x:Key="RightTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+    </Style>
+</ResourceDictionary>

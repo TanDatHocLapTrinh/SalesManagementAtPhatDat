@@ -1,0 +1,89 @@
+﻿<Window x:Class="SalesManagementAtPhatDat.Views.AdminDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesManagementAtPhatDat.Views"
+        mc:Ignorable="d"
+        Title="Admintrator" 
+        Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+    >
+    <Grid>
+        <!--Content-->
+        <!--Column-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--Row-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--SideBar / Menu-->
+        <Border Grid.Column="0" Grid.RowSpan="2"
+                BorderThickness="1"
+                BorderBrush="LightGray">
+            <StackPanel>
+                <Image Source="/ImageResource/Logo_Version_2_Edited.png"
+           Height="120"
+           Stretch="UniformToFill" Grid.Row="0"/>
+                <Button x:Name="btnDashboard"  Content="Dashboard" Style="{StaticResource ButtonSideBar}"/>
+            <Button x:Name="btnStaff" Content="Staffs" Style="{StaticResource ButtonSideBar}" Click="btnStaff_Click"/>
+            <Button x:Name="btnMenu" Content="Menu" Style="{StaticResource ButtonSideBar}"/>
+            <Button x:Name="btnCategory" Content="Categories" Style="{StaticResource ButtonSideBar}"/>
+            <Button x:Name="btnTable" Content="Tables" Style="{StaticResource ButtonSideBar}"/>
+            <Button x:Name="btnInventory" Content="Inventories" Style="{StaticResource ButtonSideBar}"/>
+            <Button x:Name="btnStatistic" Content="Statistics" Style="{StaticResource ButtonSideBar}"/>
+            <Button x:Name="btnSetting" Content="Settings" Style="{StaticResource ButtonSideBar}"/>
+            </StackPanel>
+        </Border>
+        
+        <!--Header-->
+        <Grid Grid.Row="0" Grid.Column="1"
+              >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="700"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="txtSearch"
+                     Text="Search"
+                     Grid.Column="0"
+                     Style="{DynamicResource SearchStyle}"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,30,0">
+                <Image Source="/ImageResource/TranTanDat_Avatar.jpg"
+                       Width="50"
+                       Height="50"
+                       Margin="0,0,10,0"
+                       />
+                <StackPanel 
+                             Margin="0,0,10,0"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center">
+                    <TextBlock Text="Admin" Style="{StaticResource RightTextStyle}"/>
+                    <TextBlock Text="Full Name" Style="{StaticResource RightTextStyle}"/>
+                </StackPanel>
+                <Expander 
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Center"
+                          >
+                    <StackPanel>
+                        <Button x:Name="btnDetails"
+                                Content="Details"/>
+                        <Button x:Name="btnSignOut"
+                                Content="Sign out" Click="btnSignOut_Click"
+                                />
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </Grid>
+        <!--User Control-->
+        <ContentControl Grid.Row="2" Grid.Column="1"
+                        x:Name="MainContent"/>
+    </Grid>
+</Window>
